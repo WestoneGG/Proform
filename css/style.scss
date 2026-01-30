@@ -51,6 +51,7 @@ header {
     border-radius: 8px;
     padding: 20px;
     text-decoration: none;
+	cursor: pointer;
     &::after {
         content: "";
         background: url("../img/arrow_circle_right.svg");
@@ -784,5 +785,6 @@ margin: 0;
         }
     }
 }
+
 
 
