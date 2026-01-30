@@ -85,11 +85,12 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // После отправки на почту открываем WhatsApp
     window.open(whatsappUrl, '_blank');
     this.reset();
-    alert('Заявка отправлена!');
+    alert('the application has been sent!');
   }).catch(error => {
-    console.log('Ошибка отправки:', error);
+    console.log('sending error:', error);
     // Если ошибка, всё равно открываем WhatsApp
     window.open(whatsappUrl, '_blank');
   });
 
 });
+
