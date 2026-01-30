@@ -21,8 +21,8 @@
             <div class="container">
                 <a href="#"><img class="header__logo" src="./img/logo.svg"></a>
                 <nav class="nav" id="nav">
-                    <a class="nav__link" href="#">Services</a>
-                    <a class="nav__link" href="#">Contact Us</a>
+                    <a class="nav__link" href="#services">Services</a>
+                    <a class="nav__link" href="#contactForm">Contact Us</a>
                 </nav>
                 <a class="header__btn btn" href="#contactForm">Get a Quote</a>
             </div>
@@ -78,7 +78,7 @@
                 <img class="marquee-img" src="./img/img8.jpg" alt="">
               </div>
             </div>
-            <div class="explore">
+            <div class="explore" id="services">
                 <div class="container">
                     <div class="explore__upper">
                         <h1 class="explore__title">Explore our wide range of services</h1>
@@ -115,9 +115,24 @@
                             <h4 class="explore__card-title">Patio repair</h4>
                             <p class="explore__card-description">For many people living with disabilities, maintaining a safe, comfortable, and accessible home is essential for everyday independence</p>
                         </div>
+                        <div class="explore__card explore__card--hidden">
+                            <img class="explore__card-img" src="./img/img8.jpg" alt="">
+                            <h4 class="explore__card-title">Roof repair</h4>
+                            <p class="explore__card-description">For many people living with disabilities, maintaining a safe, comfortable, and accessible home is essential for everyday independence</p>
+                        </div>
+                        <div class="explore__card explore__card--hidden">
+                            <img class="explore__card-img" src="./img/img2.jpg" alt="">
+                            <h4 class="explore__card-title">Drywall installation</h4>
+                            <p class="explore__card-description">For many people living with disabilities, maintaining a safe, comfortable, and accessible home is essential for everyday independence</p>
+                        </div>
+                        <div class="explore__card explore__card--hidden">
+                            <img class="explore__card-img" src="./img/img3.jpg" alt="">
+                            <h4 class="explore__card-title">Floor repair</h4>
+                            <p class="explore__card-description">For many people living with disabilities, maintaining a safe, comfortable, and accessible home is essential for everyday independence</p>
+                        </div>
                     </div>
                     <div class="explore__button">
-                        <a class="explore__btn btn" href="#form">More</a>
+                        <button class="explore__btn btn" id="moreCardsBtn">More</button>
                     </div>
                 </div>
             </div>
@@ -125,7 +140,10 @@
                 <div class="container">
                     <h3 class="portfolio__subtitle">Portfolio</h3>
                     <h1 class="portfolio__title">Our pro team takes care of everything</h1>
+                </div>
+
                     <!-- Slider main container -->
+                <div class="portfolio__inner">
                     <div class="swiper">
                       <!-- Additional required wrapper -->
                       <div class="swiper-wrapper">
@@ -249,11 +267,10 @@
                 </div>
                 </div>
             </div>
-        </main>
-        <footer class="footer">
+        </main>        <button id="scrollToTop" class="scroll-to-top">↑</button>        <footer class="footer">
             <div class="container">
                 <img class="footer__logo" src="./img/logo.svg" alt="">
-                <p class="footer__description">©Copyright Jim’s Handyman | Privacy Policy</p>
+                <p class="footer__description">©Copyright Jim’s Handyman | <a href="policy.html">Privacy Policy</a></p>
             </div>
         </footer>
     </div>

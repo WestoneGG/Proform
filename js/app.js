@@ -11,7 +11,10 @@ const swiper = new Swiper('.swiper', {
   slidesPerView: 1,
   spaceBetween: 100,
   centeredSlides: true,
-
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
@@ -33,7 +36,7 @@ if (contactForm) {
     
     // Проверка заполнения полей
     if (!name || !phone) {
-      alert('Please fill in your name and phone number');
+      alert('Пожалуйста, заполните имя и телефон');
       return;
     }
     
@@ -57,15 +60,47 @@ if (contactForm) {
       // После отправки открываем WhatsApp независимо от результата
       window.open(whatsappUrl, '_blank');
       form.reset();
-      alert('Thank you! Your message has been sent. Click OK to open WhatsApp.');
+      alert('Спасибо! Ваше сообщение отправлено. Нажмите ОК для открытия WhatsApp');
     })
     .catch(error => {
       console.error('Ошибка:', error);
       // Если ошибка, всё равно открываем WhatsApp
-      alert('There was an error sending the message to email, but it will be sent to WhatsApp.');
+      alert('Ошибка при отправке на почту, но сообщение будет отправлено в WhatsApp');
       window.open(whatsappUrl, '_blank');
       form.reset();
     });
   });
 }
 
+// Кнопка "Вверх"
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.classList.add('visible');
+  } else {
+    scrollToTopBtn.classList.remove('visible');
+  }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Показать больше карточек
+const moreCardsBtn = document.getElementById('moreCardsBtn');
+
+if (moreCardsBtn) {
+  moreCardsBtn.addEventListener('click', function() {
+    const hiddenCards = document.querySelectorAll('.explore__card--hidden');
+    hiddenCards.forEach(card => {
+      card.classList.remove('explore__card--hidden');
+      card.classList.add('explore__card--show');
+    });
+    // Скрываем кнопку после клика
+    moreCardsBtn.style.display = 'none';
+  });
+}

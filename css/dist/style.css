@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1110px;
   margin: 0 auto;
@@ -49,6 +53,11 @@ header__btn:hover {
   border-radius: 8px;
   padding: 20px;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #3a2dcc;
+  transform: scale(1.05);
 }
 .btn::after {
   content: "";
@@ -76,6 +85,24 @@ header__btn:hover {
   text-align: center;
   color: #000;
   text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #523ff5;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.nav__link:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero .container {
@@ -200,6 +227,10 @@ header__btn:hover {
 }
 .explore__card-img {
   margin-bottom: 30px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 .explore__card-title {
   margin-bottom: 20px;
@@ -228,9 +259,7 @@ header__btn:hover {
 }
 
 .portfolio .container {
-  max-width: 1200px;
   margin-top: 60px;
-  margin-bottom: 80px;
 }
 .portfolio__subtitle {
   font-family: "Bebas Neue", sans-serif;
@@ -249,6 +278,11 @@ header__btn:hover {
   text-transform: uppercase;
   color: #040404;
   margin-bottom: 60px;
+}
+.portfolio__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .swiper-slide {
@@ -269,7 +303,7 @@ header__btn:hover {
   z-index: 10;
 }
 .swiper-button-next:hover {
-  transform: scale(1.1) rotate(180deg);
+  transform: scale(1.1);
 }
 .swiper-button-prev {
   border-radius: 500px;
@@ -340,6 +374,7 @@ header__btn:hover {
   display: none;
 }
 .form-btn {
+  cursor: pointer;
   border: none;
 }
 
@@ -351,6 +386,7 @@ header__btn:hover {
   text-transform: uppercase;
   text-align: center;
   color: #767676;
+  cursor: pointer;
 }
 .my-button::before {
   content: "";
@@ -362,6 +398,13 @@ header__btn:hover {
   margin-right: 10px;
 }
 
+.info a {
+  text-decoration: none;
+  color: #fff;
+}
+.info a:hover {
+  text-decoration: underline;
+}
 .info__main {
   max-width: 550px;
   width: 100%;
@@ -409,11 +452,18 @@ header__btn:hover {
   margin-top: 68px;
 }
 
+.footer a {
+  text-decoration: none;
+  color: #000;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
 .footer .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   padding: 20px 15px;
 }
 .footer__description {
@@ -564,7 +614,7 @@ header__btn:hover {
     margin-bottom: 20px;
   }
   .header__logo {
-    width: 60px;
+    width: 80px;
   }
   .nav {
     top: 60px;
@@ -617,6 +667,10 @@ header__btn:hover {
     padding: 12px;
   }
   .form {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
     padding: 20px;
   }
   .form-title {
@@ -627,6 +681,10 @@ header__btn:hover {
     width: 90%;
     padding: 12px;
     font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
   }
   .form-group {
     margin-bottom: 12px;
@@ -640,7 +698,6 @@ header__btn:hover {
   .info__main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
   }
   .info__description {
@@ -665,5 +722,60 @@ header__btn:hover {
   .my-button::before {
     width: 14px;
     height: 14px;
+  }
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #523ff5;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-to-top:hover {
+  background: #3a2dcc;
+  transform: translateY(-5px);
+}
+
+.explore__card--hidden {
+  display: none;
+}
+
+.explore__card--show {
+  animation: cardAppear 0.6s ease-out forwards;
+}
+.explore__card--show:nth-child(7) {
+  animation-delay: 0.1s;
+}
+.explore__card--show:nth-child(8) {
+  animation-delay: 0.2s;
+}
+.explore__card--show:nth-child(9) {
+  animation-delay: 0.3s;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
