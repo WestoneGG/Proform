@@ -66,14 +66,14 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const message = formData.get('message');
   
   // Номер WhatsApp (замени на свой)
-  const whatsappNumber = '+380979356928'; // Формат: +страна код телефон
+  const whatsappNumber = '+380502881708'; // Формат: +страна код телефон
   
   // Текст для WhatsApp
   const whatsappText = `Имя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`;
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappText)}`;
   
   // Отправка на почту через FormSubmit
-  const formAction = 'https://formsubmit.co/4vlad89gmail.com'; // Замени на свою почту
+  const formAction = 'https://formsubmit.co/ddvlad12@gmail.com'; // Замени на свою почту
   
   // Создаём новую форму для отправки на почту
   const submitForm = new FormData(this);
@@ -91,4 +91,5 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Если ошибка, всё равно открываем WhatsApp
     window.open(whatsappUrl, '_blank');
   });
+
 });
