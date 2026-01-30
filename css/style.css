@@ -32,6 +32,7 @@ header__btn {
   border-radius: 8px;
   padding: 12px 24px;
   text-decoration: none;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 header__btn:hover {
