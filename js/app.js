@@ -119,3 +119,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.explore__card');
     cards.forEach(card => observer.observe(card));
 });
+
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-scroll-to]')
+  if (!trigger) return
+
+  const target = document.getElementById(trigger.dataset.scrollTo)
+  if (!target) return
+
+  smoothScrollTo(target, 600)
+})
+
+function smoothScrollTo(target, duration = 800) {
+  const startY = window.scrollY
+  const targetY = target.getBoundingClientRect().top
+  const delta = targetY
+  const startTime = performance.now()
+
+  function step(time) {
+    const progress = Math.min((time - startTime) / duration, 1)
+
+    // 🔥 ЛИНЕЙНО — без ватного старта
+    window.scrollTo(0, startY + delta * progress)
+
+    if (progress < 1) {
+      requestAnimationFrame(step)
+    }
+  }
+
+  requestAnimationFrame(step)
+}

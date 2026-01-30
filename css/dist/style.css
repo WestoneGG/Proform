@@ -1,8 +1,4 @@
 @charset "UTF-8";
-html {
-  scroll-behavior: smooth;
-}
-
 .container {
   max-width: 1110px;
   margin: 0 auto;
@@ -258,6 +254,19 @@ header__btn:hover {
   margin-bottom: 80px;
 }
 
+/* Начальное состояние: невидимы и чуть ниже */
+.explore__card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+/* Состояние при появлении */
+.explore__card.element-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .portfolio .container {
   margin-top: 60px;
 }
@@ -511,12 +520,6 @@ header__btn:hover {
     max-width: fit-content;
     padding: 0;
   }
-  .swiper-button-next {
-    display: none;
-  }
-  .swiper-button-prev {
-    display: none;
-  }
   .hero__title {
     font-size: 48px;
   }
@@ -662,9 +665,9 @@ header__btn:hover {
     height: 250px;
   }
   .swiper-button-next, .swiper-button-prev {
-    width: 45px;
-    height: 45px;
-    padding: 12px;
+    width: 20px;
+    height: 20px;
+    padding: 6px;
   }
   .form {
     font-family: "Open Sans", sans-serif;
