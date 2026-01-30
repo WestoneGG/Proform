@@ -33,7 +33,7 @@ if (contactForm) {
     
     // Проверка заполнения полей
     if (!name || !phone) {
-      alert('Пожалуйста, заполните имя и телефон');
+      alert('Please fill in your name and phone number');
       return;
     }
     
@@ -57,14 +57,15 @@ if (contactForm) {
       // После отправки открываем WhatsApp независимо от результата
       window.open(whatsappUrl, '_blank');
       form.reset();
-      alert('Спасибо! Ваше сообщение отправлено. Нажмите ОК для открытия WhatsApp');
+      alert('Thank you! Your message has been sent. Click OK to open WhatsApp.');
     })
     .catch(error => {
       console.error('Ошибка:', error);
       // Если ошибка, всё равно открываем WhatsApp
-      alert('Ошибка при отправке на почту, но сообщение будет отправлено в WhatsApp');
+      alert('There was an error sending the message to email, but it will be sent to WhatsApp.');
       window.open(whatsappUrl, '_blank');
       form.reset();
     });
   });
 }
+
