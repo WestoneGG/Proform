@@ -104,3 +104,18 @@ if (moreCardsBtn) {
     moreCardsBtn.style.display = 'none';
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('element-show');
+            }
+        });
+    }, {
+        threshold: 0.1 // Сработает, когда 10% карточки появится в поле зрения
+    });
+
+    const cards = document.querySelectorAll('.explore__card');
+    cards.forEach(card => observer.observe(card));
+});
