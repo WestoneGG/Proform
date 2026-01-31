@@ -41,7 +41,7 @@ if (contactForm) {
     }
     
     // Номер WhatsApp
-    const whatsappNumber = '+380979356928';
+    const whatsappNumber = '+61493457675';
     const whatsappText = `Имя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`;
     const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappText)}`;
     
@@ -51,7 +51,7 @@ if (contactForm) {
     formData.append('_next', window.location.href);
     
     // Отправка на почту через FormSubmit
-    fetch('https://formsubmit.co/ddvlad12@gmail.com', { //4vlad89@gmail.com
+    fetch('https://formsubmit.co/info@fixit-pro.com.au', {
       method: 'POST',
       body: formData
     })
@@ -153,5 +153,6 @@ function smoothScrollTo(target, duration = 800) {
   }
 
   requestAnimationFrame(step)
+
 
 }
