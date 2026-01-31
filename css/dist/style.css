@@ -250,6 +250,7 @@ header__btn:hover {
   justify-content: center;
 }
 .explore__btn {
+  border: none !important;
   max-width: fit-content;
   margin-bottom: 80px;
 }
@@ -306,7 +307,7 @@ header__btn:hover {
 }
 .swiper-button-next {
   border-radius: 500px;
-  padding: 20px;
+  padding: 13px;
   background: #fff;
   transition: all 0.3s ease;
   z-index: 10;
@@ -316,7 +317,7 @@ header__btn:hover {
 }
 .swiper-button-prev {
   border-radius: 500px;
-  padding: 20px;
+  padding: 13px;
   background: #fff;
   transition: all 0.3s ease;
 }
@@ -498,8 +499,8 @@ header__btn:hover {
     padding: 0 15px;
   }
   .btn {
-    font-size: 18px;
-    padding: 15px;
+    font-size: 24px;
+    padding: 18px;
     gap: 8px;
   }
   .btn::after {
@@ -559,9 +560,9 @@ header__btn:hover {
     height: 380px;
   }
   .swiper-button-next, .swiper-button-prev {
-    width: 55px;
-    height: 55px;
-    padding: 18px;
+    width: 20px;
+    height: 20px;
+    padding: 12px;
   }
   .form {
     max-width: 90%;
@@ -580,7 +581,14 @@ header__btn:hover {
     flex-direction: column;
   }
   .info__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 28px;
+  }
+  .info__link svg {
+    width: 42px;
+    height: 42px;
   }
   .info__lower {
     margin: 0;
@@ -605,8 +613,8 @@ header__btn:hover {
 }
 @media (max-width: 480px) {
   .btn {
-    font-size: 16px;
-    padding: 12px;
+    font-size: 20px;
+    padding: 18px;
     gap: 6px;
   }
   .btn::after {
@@ -649,11 +657,16 @@ header__btn:hover {
   .explore__subtitle {
     font-size: 16px;
   }
+  .explore__card-img {
+    margin-bottom: 16px;
+  }
   .explore__card-title {
-    font-size: 22px;
+    margin-bottom: 12px;
+    font-size: 28px;
   }
   .explore__card-description {
-    font-size: 13px;
+    margin-bottom: 12px;
+    font-size: 16px;
   }
   .portfolio__subtitle {
     font-size: 16px;
@@ -708,7 +721,14 @@ header__btn:hover {
     font-size: 14px;
   }
   .info__link {
-    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+  }
+  .info__link svg {
+    width: 28px;
+    height: 28px;
   }
   .footer .container {
     display: flex;
