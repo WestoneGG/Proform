@@ -51,24 +51,29 @@ if (contactForm) {
     formData.append('_next', window.location.href);
     
     // Отправка на почту через FormSubmit
-    fetch('https://formsubmit.co/4vlad89@gmail.com', {
+    fetch('https://formsubmit.co/ddvlad12@gmail.com', { //4vlad89@gmail.com
       method: 'POST',
       body: formData
     })
     .then(response => {
-      console.log('Отправка на почту:', response.status);
-      // После отправки открываем WhatsApp независимо от результата
-      window.open(whatsappUrl, '_blank');
+      const statusDiv = document.getElementById('formStatus');
+      
+      // Показываем сообщение с анимацией
+      statusDiv.style.display = 'block';
+      
+      // Сбрасываем форму и открываем WhatsApp
       form.reset();
-      alert('Спасибо! Ваше сообщение отправлено. Нажмите ОК для открытия WhatsApp');
+      window.open(whatsappUrl, '_blank');
+
+      // Плавно скрываем через 5 секунд
+      // setTimeout(() => {
+      //   statusDiv.style.opacity = '0'; // Сначала делаем прозрачным
+      //   setTimeout(() => {
+      //       statusDiv.style.display = 'none'; // Затем полностью убираем
+      //       statusDiv.style.opacity = '1';    // Возвращаем непрозрачность для следующего раза
+      //   }, 500); 
+      // }, 5000);
     })
-    .catch(error => {
-      console.error('Ошибка:', error);
-      // Если ошибка, всё равно открываем WhatsApp
-      alert('Ошибка при отправке на почту, но сообщение будет отправлено в WhatsApp');
-      window.open(whatsappUrl, '_blank');
-      form.reset();
-    });
   });
 }
 
@@ -148,4 +153,5 @@ function smoothScrollTo(target, duration = 800) {
   }
 
   requestAnimationFrame(step)
+
 }

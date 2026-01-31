@@ -1,8 +1,4 @@
 @charset "UTF-8";
-html {
-  scroll-behavior: smooth;
-}
-
 .container {
   max-width: 1110px;
   margin: 0 auto;
@@ -32,7 +28,6 @@ header__btn {
   border-radius: 8px;
   padding: 12px 24px;
   text-decoration: none;
-  cursor: pointer;
   transition: background 0.3s ease;
 }
 header__btn:hover {
@@ -88,7 +83,6 @@ header__btn:hover {
   text-decoration: none;
   position: relative;
   display: inline-block;
-  cursor: pointer;
 }
 .nav__link::after {
   content: "";
@@ -336,7 +330,8 @@ header__btn:hover {
 .info {
   background: url("../img/form-bg.jpg");
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
+  background-position: right;
   background-repeat: no-repeat;
 }
 .info .bg {
@@ -528,7 +523,7 @@ header__btn:hover {
     margin-bottom: 30px;
   }
   .header__logo {
-    width: 70px;
+    width: 120px;
   }
   .header__btn {
     display: none;
@@ -636,7 +631,7 @@ header__btn:hover {
     margin-bottom: 20px;
   }
   .header__logo {
-    width: 80px;
+    width: 120px;
   }
   .nav {
     top: 60px;
@@ -795,6 +790,25 @@ header__btn:hover {
   from {
     opacity: 0;
     transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#formStatus {
+  display: none; /* Скрыто по умолчанию */
+  color: #28a745;
+  margin-top: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
