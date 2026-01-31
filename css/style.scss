@@ -303,7 +303,7 @@ margin: 0;
 
     }
     &__inner {
-            max-width: 1200px;
+            max-width: 1180px;
             margin: 0 auto;
         margin-bottom: 80px;
     }
@@ -334,6 +334,8 @@ margin: 0;
 		&-button-next {
                 border-radius: 500px;
                 padding: 13px;
+                width: 30px;
+                height: 30px;
                 background: #fff;
                 transition: all 0.3s ease;
                 // margin: 0 -50px 0 0 !important;
@@ -346,6 +348,8 @@ margin: 0;
                 // margin: 0 0 0 -50px !important;
                 border-radius: 500px;
                 padding: 13px;
+                width: 30px;
+                height: 30px;
                 background: #fff;
                 transition: all 0.3s ease;
                 &:hover {
@@ -360,7 +364,7 @@ margin: 0;
 .info {
     background: url("../img/form-bg.jpg");
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     
     background-position: right;
     background-repeat: no-repeat;

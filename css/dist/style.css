@@ -290,7 +290,7 @@ header__btn:hover {
   margin-bottom: 60px;
 }
 .portfolio__inner {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   margin-bottom: 80px;
 }
@@ -308,6 +308,8 @@ header__btn:hover {
 .swiper-button-next {
   border-radius: 500px;
   padding: 13px;
+  width: 30px;
+  height: 30px;
   background: #fff;
   transition: all 0.3s ease;
   z-index: 10;
@@ -318,6 +320,8 @@ header__btn:hover {
 .swiper-button-prev {
   border-radius: 500px;
   padding: 13px;
+  width: 30px;
+  height: 30px;
   background: #fff;
   transition: all 0.3s ease;
 }
@@ -327,7 +331,6 @@ header__btn:hover {
 .info {
   background: url("../img/form-bg.jpg");
   background-size: cover;
-  background-attachment: fixed;
   background-position: right;
   background-repeat: no-repeat;
 }
